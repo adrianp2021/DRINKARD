@@ -33,13 +33,13 @@ const CocktailShow = () => {
   useEffect(() => {
     if (!cocktail) return 
     const entries = Object.entries(cocktail)
-    console.log(entries)
+    console.log('These are the entries', entries)
     const filteredIngredients = entries.filter(ingredient => {
       if (ingredient[0].includes('strIngredient') && ingredient[1] !== null) {
-        return ingredient
+        return ingredient[1]
       }
     })
-    console.log(filteredIngredients)
+    console.log('these are the filtered ingredients', filteredIngredients)
   }, [cocktail])
 
   // create another state for ingredients, when cocktails updates you can also update the state(ingredients)
@@ -64,9 +64,6 @@ const CocktailShow = () => {
                 <h4 className="title is-4"><span role="img" aria-label="globe"></span>Glass Type</h4>
                 <p>{cocktail.strGlass}</p>
                 <hr />
-
-
-
               </div>
             </div>
           </div>
