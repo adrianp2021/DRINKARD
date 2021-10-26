@@ -8,7 +8,6 @@ const CocktailShow = () => {
 
   const [cocktail, setCocktail] = useState(null)
   const [hasError, setHasError] = useState(false)
-  // const [ingredients, setIngredients] = useState('')
 
   useEffect(() => {
     const getCocktails = async () => {
@@ -50,9 +49,9 @@ const CocktailShow = () => {
             <h2 className="title has-text-centered">{cocktail.strDrink}</h2>
             <hr />
             <div className="columns">
-              <div className="column is-half">
+              <div className="column is-half" id="cocktail-card-div">
                 <figure className="image">
-                  <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+                  <img src={cocktail.strDrinkThumb} alt='' id="cocktail-card" />
                 </figure>
               </div>
               <div className="column is-half">
@@ -71,17 +70,23 @@ const CocktailShow = () => {
                 <hr />
                 <h4 className="title is-4">
                   <span role="img" aria-label="globe"></span>Glass Type
+                  
                 </h4>
+                {cocktail.strGlass}
                 <hr />
                 <h4 className="title is-4">
                   <span role="img" aria-label="globe"></span>Instructions
                 </h4>
                 <p>{cocktail.strInstructions}</p>
                 <hr />
-
                 <h4 className="title is-4">Ingredients</h4>
-                <p>{cocktail.filteredIngredients}</p>
-                {/* <p>{cocktail.strIngredient}</p> */}
+                <p>{cocktail.strMeasure1} {cocktail.strIngredient1}</p>
+                <p>{cocktail.strMeasure2} {cocktail.strIngredient2}</p>
+                <p>{cocktail.strMeasure3} {cocktail.strIngredient3}</p>
+                <p>{cocktail.strMeasure4} {cocktail.strIngredient4}</p>
+                <p>{cocktail.strMeasure5} {cocktail.strIngredient5}</p>
+                <p>{cocktail.strMeasure6} {cocktail.strIngredient6}</p>
+                <hr />
               </div>
             </div>
           </div>

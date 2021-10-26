@@ -27,9 +27,6 @@ const CocktailIndex = () => {
     getCocktails()
   }, [])
 
-  // useEffect(() => { 
-  //   document.body.style.backgroundColor = 'rgb(221, 235, 223)'
-  // }, [])
 
 
   console.log('cocktail', cocktails)
