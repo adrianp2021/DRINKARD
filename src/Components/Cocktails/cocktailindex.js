@@ -27,15 +27,14 @@ const CocktailIndex = () => {
     getCocktails()
   }, [])
 
-  useEffect(() => { 
-    document.body.style.backgroundColor = 'rgb(221, 235, 223)'
-  }, [])
+  // useEffect(() => { 
+  //   document.body.style.backgroundColor = 'rgb(221, 235, 223)'
+  // }, [])
 
 
   console.log('cocktail', cocktails)
   return (
-    <section>
-      <h1 className="card h1-text">Find your drink</h1>
+    <section className="cocktail-index">
       <div className="container">        
         {cocktails.length > 0 ? 
           <div className="columns is-multiline">

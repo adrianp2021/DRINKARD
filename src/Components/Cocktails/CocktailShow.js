@@ -13,11 +13,13 @@ const CocktailShow = () => {
   useEffect(() => {
     const getCocktails = async () => {
       try {
-        const { data } = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
+        const { data } = await axios.get(
+          `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
+        )
         // console.log(response)
         setCocktail(data.drinks[0])
-        console.log(setCocktail)
-        console.log('Check=>', data)
+        console.log('what is setCocktail', setCocktail)
+        console.log('What is the data on lookup returning', data)
       } catch (err) {
         console.log(err)
         setHasError(true)
@@ -26,15 +28,11 @@ const CocktailShow = () => {
     getCocktails()
   }, [id])
 
-  useEffect(() => { 
-    document.body.style.backgroundColor = 'rgb(221, 235, 223)'
-  }, [])
-
   useEffect(() => {
-    if (!cocktail) return 
+    if (!cocktail) return
     const entries = Object.entries(cocktail)
     console.log('These are the entries', entries)
-    const filteredIngredients = entries.filter(ingredient => {
+    const filteredIngredients = entries.filter((ingredient) => {
       if (ingredient[0].includes('strIngredient') && ingredient[1] !== null) {
         return ingredient[1]
       }
@@ -47,7 +45,7 @@ const CocktailShow = () => {
   return (
     <section className="section">
       <div className="container">
-        {cocktail ?
+        {cocktail ? (
           <div>
             <h2 className="title has-text-centered">{cocktail.strDrink}</h2>
             <hr />
@@ -58,20 +56,42 @@ const CocktailShow = () => {
                 </figure>
               </div>
               <div className="column is-half">
-                <h4 className="title is-4"><span role="img" aria-label="plate">🍸</span>Name</h4>
-                <p>{cocktail.strDrink}</p>
+                <h4 className="title is-4">
+                  <span role="img" aria-label="plate">
+                    Category
+                  </span>
+                  
+                </h4>
+                <p>{cocktail.strCategory}</p>
                 <hr />
-                <h4 className="title is-4"><span role="img" aria-label="globe"></span>Glass Type</h4>
-                <p>{cocktail.strGlass}</p>
+                <h4 className="title is-4">
+                  <span role="img" aria-label="globe"></span>Alcoholic/Non-alcoholic
+                </h4>
+                <p>{cocktail.strAlcoholic}</p>
                 <hr />
+                <h4 className="title is-4">
+                  <span role="img" aria-label="globe"></span>Glass Type
+                </h4>
+                <hr />
+                <h4 className="title is-4">
+                  <span role="img" aria-label="globe"></span>Instructions
+                </h4>
+                <p>{cocktail.strInstructions}</p>
+                <hr />
+
+                <h4 className="title is-4">Ingredients</h4>
+                <p>{cocktail.filteredIngredients}</p>
+                {/* <p>{cocktail.strIngredient}</p> */}
               </div>
             </div>
           </div>
-          :
+        ) : (
           <h2 className="title has-text-centered">
-            {hasError ? 'Oh something went wrong, the sadness 😞' : '...loading 🧀 '}
+            {hasError
+              ? 'Oh something went wrong, the sadness 😞'
+              : '...loading 🧀 '}
           </h2>
-        }
+        )}
       </div>
     </section>
   )

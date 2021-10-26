@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const CocktailCard = ({ idDrink, strDrink, strDrinkThumb, strAlcoholic }) => {
+const CocktailCard = ({ idDrink, strDrink, strDrinkThumb, strIngredient }) => {
   return (
     <div className="column is-one-quarter-desktop is-one-third-tablet cocktail-image">
       <Link to={`/cocktails/${idDrink}`}>
@@ -11,11 +11,11 @@ const CocktailCard = ({ idDrink, strDrink, strDrinkThumb, strAlcoholic }) => {
           </div>
           <div className="card-image is-rounded">
             <figure className="image image-is-1by1">
-              <img className="is-rounded" src={strDrinkThumb} alt={strDrink}/>
+              <img className="is-rounded" src={strDrinkThumb} alt=''/>
             </figure>
           </div>
-          <div className="card-content">
-            <h5>{strAlcoholic}</h5>
+          <div className="card">
+            <h5>{strIngredient}</h5>
           </div>
         </div>
       </Link>

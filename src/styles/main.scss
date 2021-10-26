@@ -54,8 +54,7 @@ margin-top: 20px;
 }
 
 .box-color{
-  background-color: red
-
+  // background-color: red
 }
 
 .fade-in {
@@ -92,10 +91,6 @@ nav.navbar{
   margin-top: 5px;
 }
 
-div.container{
-  margin-bottom: 30%;
-}
-
 .navbar{
   border-radius: 2px;
   background: linear-gradient(12deg, rgb(153, 235, 129), lightblue, rgb(241, 216, 132), lime);
@@ -119,4 +114,9 @@ div.container{
   0%{background-position:0% 65%}
   50%{background-position:100% 36%}
   100%{background-position:0% 65%}
+}
+
+.section{
+  height: 100vh;
+  width: 100vw;
 }
