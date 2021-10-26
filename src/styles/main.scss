@@ -52,6 +52,7 @@ margin-top: 20px;
   transform: translateY(-15px)
 }
 
+
 #cocktail-card{
   width: 470px;
   height: 450px;
@@ -91,42 +92,23 @@ margin-top: 20px;
 .container-navbar{
   display: flex;
   justify-content: center;
-  height: 70px;
 }
+
+.left{
+  width: 40px;
+  height: 25px;
+  margin: 20px;
+  color:white;
+}
+.left2{
+  height: 22px;
+  width: 40px;
+  margin: 20px;
+  color:white;
+}
+
 nav.navbar{
-  height:10%;
-}
-.navbar-item{
-  margin-right: 20px;
-}
-.icon-text{
-  margin-top: 5px;
-}
-
-.navbar{
-  border-radius: 2px;
-  background: linear-gradient(12deg, rgb(153, 235, 129), lightblue, rgb(241, 216, 132), lime);
-  background-size: 1000% 1000%;
-  -webkit-animation: AnimationName 49s ease infinite;
-  -moz-animation: AnimationName 49s ease infinite;
-  animation: AnimationName 49s ease infinite;
-
-}
-
-@-webkit-keyframes AnimationName {
-  0%{background-position:0% 65%}
-  50%{background-position:100% 36%}
-  100%{background-position:0% 65%}
-}
-@-moz-keyframes AnimationName {
-  0%{background-position:0% 65%}
-  50%{background-position:100% 36%}
-  100%{background-position:0% 65%}
-}
-@keyframes AnimationName {
-  0%{background-position:0% 65%}
-  50%{background-position:100% 36%}
-  100%{background-position:0% 65%}
+  background: rgb(0, 0, 0);
 }
 
 .section{
