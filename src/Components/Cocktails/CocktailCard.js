@@ -7,7 +7,7 @@ const CocktailCard = ({ idDrink, strDrink, strDrinkThumb, strIngredient }) => {
       <Link to={`/cocktails/${idDrink}`}>
         <div className="card">
           <div className="card-header">
-            <div className="card-header-title">{strDrink}</div>
+            <div className="card-header-title" id="centre">{strDrink}</div>
           </div>
           <div className="card-image is-rounded image-div">
             <figure className="image image-is-1by1 figure-tag">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import CocktailCard from './CocktailCard'
-import DotLoader from 'react-spinners/DotLoader'
+import PuffLoader from 'react-spinners/PuffLoader'
 
 
 const CocktailIndex = () => {
@@ -45,9 +45,9 @@ const CocktailIndex = () => {
             })}
           </div>
           :
-          <h2 className="title has-text-centered ">
-            {hasError ? 'Something has gone wrong.' : <DotLoader loading={loading} size={150}/>}
-          </h2>
+          <div id="error">
+            {hasError ? 'Something has gone wrong.' : <PuffLoader loading={loading} size={150}/>}
+          </div>
         }
       </div>   
     </section>

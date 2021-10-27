@@ -1,6 +1,7 @@
 import React from 'react'
-import Home from './Components/common/Home'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+import Home from './Components/common/Home'
 import CocktailIndex from './Components/Cocktails/cocktailindex'
 import Navbar from './Components/common/Nav'
 import CocktailShow from './Components/Cocktails/CocktailShow'
