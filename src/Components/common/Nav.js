@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import { FaHome, FaGlassMartiniAlt } from 'react-icons/fa'
-
+import { FaCocktail } from 'react-icons/fa'
+import { FiHome } from 'react-icons/fi'
 
 const Navbar = () => {
   return (
@@ -10,11 +10,15 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="container-navbar">
           <Link to="/" >
-            <FaHome className="left"/>
+            <div className="left">
+              <FiHome />
+            </div>
           </Link>
           <div className="navbar-start">
             <Link to="/cocktails" >
-              <FaGlassMartiniAlt className="left2"/>
+              <div className="left">
+                <FaCocktail />
+              </div>
             </Link>
           </div>
         </div>

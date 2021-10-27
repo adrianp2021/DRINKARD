@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import CocktailCard from './CocktailCard'
-
-
+import DotLoader from 'react-spinners/DotLoader'
 
 
 const CocktailIndex = () => {
@@ -14,6 +13,7 @@ const CocktailIndex = () => {
   //   strAlcoholic: '',
   // })
   const [hasError, setHasError] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const getCocktails = async () => {
@@ -27,7 +27,12 @@ const CocktailIndex = () => {
     getCocktails()
   }, [])
 
-
+  useEffect(() => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(true)
+    }, 3000)
+  }, [])
 
   console.log('cocktail', cocktails)
   return (
@@ -40,8 +45,8 @@ const CocktailIndex = () => {
             })}
           </div>
           :
-          <h2 className="title has-text-centered">
-            {hasError ? 'Something has gone wrong!' : 'loading...🍸'}
+          <h2 className="title has-text-centered ">
+            {hasError ? 'Something has gone wrong.' : <DotLoader loading={loading} size={150}/>}
           </h2>
         }
       </div>   

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import DotLoader from 'react-spinners/DotLoader'
 
 const CocktailShow = () => {
   const { id } = useParams()
@@ -27,17 +28,17 @@ const CocktailShow = () => {
     getCocktails()
   }, [id])
 
-  useEffect(() => {
-    if (!cocktail) return
-    const entries = Object.entries(cocktail)
-    console.log('These are the entries', entries)
-    const filteredIngredients = entries.filter((ingredient) => {
-      if (ingredient[0].includes('strIngredient') && ingredient[1] !== null) {
-        return ingredient[1]
-      }
-    })
-    console.log('these are the filtered ingredients', filteredIngredients)
-  }, [cocktail])
+  // useEffect(() => {
+  //   if (!cocktail) return
+  //   const entries = Object.entries(cocktail)
+  //   console.log('These are the entries', entries)
+  //   const filteredIngredients = entries.filter((ingredient) => {
+  //     if (ingredient[0].includes('strIngredient') && ingredient[1] !== null) {
+  //       return ingredient[1]
+  //     }
+  //   })
+  //   console.log('these are the filtered ingredients', filteredIngredients)
+  // }, [cocktail])
 
   // create another state for ingredients, when cocktails updates you can also update the state(ingredients)
 
@@ -50,7 +51,7 @@ const CocktailShow = () => {
             <hr />
             <div className="columns">
               <div className="column is-half" id="cocktail-card-div">
-                <figure className="image">
+                <figure>
                   <img src={cocktail.strDrinkThumb} alt='' id="cocktail-card" />
                 </figure>
               </div>
@@ -94,7 +95,7 @@ const CocktailShow = () => {
           <h2 className="title has-text-centered">
             {hasError
               ? 'Oh something went wrong, the sadness 😞'
-              : '...loading 🧀 '}
+              : <DotLoader />}
           </h2>
         )}
       </div>
