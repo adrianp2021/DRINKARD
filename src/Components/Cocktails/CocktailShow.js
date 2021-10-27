@@ -16,7 +16,6 @@ const CocktailShow = () => {
         const { data } = await axios.get(
           `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`
         )
-        // console.log(response)
         setCocktail(data.drinks[0])
         console.log('what is setCocktail', setCocktail)
         console.log('What is the data on lookup returning', data)
@@ -40,8 +39,6 @@ const CocktailShow = () => {
   //   console.log('these are the filtered ingredients', filteredIngredients)
   // }, [cocktail])
 
-  // create another state for ingredients, when cocktails updates you can also update the state(ingredients)
-
   return (
     <section className="section">
       <div className="container">
@@ -60,7 +57,6 @@ const CocktailShow = () => {
                   <span role="img" aria-label="plate">
                     Category
                   </span>
-                  
                 </h4>
                 <p>{cocktail.strCategory}</p>
                 <hr />
