@@ -28,7 +28,7 @@ const CocktailIndex = () => {
 
   console.log('cocktail', cocktails)
   return (
-    <section className="cocktail-index">
+    <section className="cocktail-index cocktail-page">
       <div className="container">
         {cocktails.length > 0 ? (
           <div className="columns is-multiline">

@@ -1,29 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import cocktail from '../image/cocktail.png'
 
 const Home = () => {
-
   return (
-
-    <section className="hero is-fullheight-with-navbar">
+    <section className="hero is-fullheight-with-navbar homepage">
       <div className="hero-body">
         <div className="container welcome-text">
-          <h1 className="title is-1 has-text-centered">
-            <span className="logo-emoji" role="img" aria-label="logo"></span>
-          Welcome to <br>
-            </br><span className="drinkard fade-in">DRINKARD</span>
-            <Link to="/cocktails">
-              <span className="logo-emoji" role="img" aria-label="logo">🍸</span></Link>
-          </h1>
+          <div id="flex">
+            <div className="image-border">
+              <Link to="/cocktails">
+                <img src={cocktail} alt="" className="glass" />
+              </Link>
+            </div>
+            <h1 className=" is-1 has-text-centered drinkard">
+              <span id="span">D</span>RINKAR<span id="span">D</span>
+            </h1>
+          </div>
         </div>
-        
       </div>
-
-      
     </section>
-
-
   )
 }
 
