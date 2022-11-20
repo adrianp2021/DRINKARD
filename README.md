@@ -50,6 +50,8 @@ Build a React application that consumes any public API.
 
 DRINKARD hosts a variety of 25 cocktails. Once the page loads, a "Welcome to DRINAKARD 🍸" displays, with the glass being clickable. If the user clicks on the glass, it will direct him/her to the cocktails page. On the top of the page we devised a navbar which is always present, no matter on which section of the page the user is; this way, the user can either return to the homepage (by clicking on the home icon) or click on the glass to redirect to the cocktail page.
 
+![drinkard](https://user-images.githubusercontent.com/83225952/128079151-677d6296-d12b-4ca4-99c6-f90e619e1358.jpeg)
+
 ## Demonstration of the app flow
 
 ![drinkard](https://user-images.githubusercontent.com/83225952/139964295-aa9f4cdf-e2bb-4608-9166-c7c584b516ae.gif)
